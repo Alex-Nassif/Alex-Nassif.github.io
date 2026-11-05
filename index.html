@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Software Developer</title>
+<meta name="description" content="Portfolio of Your Name, a software developer building fast, accessible web software.">
+<meta name="theme-color" content="#1b1e24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1b1e24;
+    --surface: #22262d;
+    --line: #333841;
+    --ink: #eceef2;
+    --muted: #9aa1ad;
+    --accent: #8fb4ff;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  main { max-width: 56rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
+  nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 5rem; }
+  .logo { font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  nav ul { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+  nav ul a { color: var(--muted); text-decoration: none; font-size: .95rem; transition: color .2s; }
+  nav ul a:hover { color: var(--ink); }
+
+  .hero { padding-bottom: 1rem; animation: fade .7s ease-out both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  h1 { font-size: clamp(2.75rem, 8vw, 4.5rem); line-height: 1.05; letter-spacing: -0.04em; font-weight: 600; margin: 0 0 1.25rem; }
+  .lead { font-size: 1.3rem; font-weight: 300; line-height: 1.55; color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+  .lead strong { color: var(--ink); font-weight: 400; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn { display: inline-block; padding: .65rem 1.25rem; border-radius: 8px; font-size: .95rem; font-weight: 500; text-decoration: none; color: var(--ink); border: 1px solid var(--line); transition: border-color .2s, background .2s; }
+  .btn:hover { border-color: var(--muted); background: var(--surface); }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn.primary:hover { background: #fff; }
+
+  section { margin-top: 6.5rem; }
+  h2 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 .5rem; }
+  .sub { color: var(--muted); margin: 0 0 2rem; max-width: 34rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+  .card { position: relative; display: flex; flex-direction: column; padding: 1.5rem; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); transition: border-color .2s, transform .2s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card h3 { margin: 0 0 .5rem; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+  .card h3 a { color: var(--ink); text-decoration: none; }
+  .card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
+  .card p { margin: 0 0 1.25rem; color: var(--muted); font-size: .98rem; flex: 1; }
+  .tags { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .35rem 1rem; color: var(--muted); font-size: .88rem; }
+
+  .about { display: grid; gap: 3rem; grid-template-columns: 1.3fr 1fr; align-items: start; }
+  .about p { margin: 0 0 1rem; max-width: 34rem; color: var(--muted); }
+  .skills-title { margin: 0 0 .75rem; font-size: .95rem; font-weight: 600; }
+  .skills { list-style: none; margin: 0; padding: 0; }
+  .skills li { padding: .5rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .98rem; }
+  .skills li:last-child { border-bottom: 1px solid var(--line); }
+
+  .contact { padding-top: 2.5rem; border-top: 1px solid var(--line); }
+  .contact h2 { font-size: clamp(1.75rem, 5vw, 2.5rem); letter-spacing: -0.03em; }
+  .contact .cta { margin-top: 1.5rem; }
+
+  footer { margin-top: 4rem; color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 40rem) {
+    .about { grid-template-columns: 1fr; gap: 2rem; }
+    nav { padding-bottom: 3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero { animation: none; }
+    .card, .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav aria-label="Primary">
+    <a class="logo" href="#top">Your Name</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>Software developer<br>based in City.</h1>
+    <p class="lead">I build <strong>fast, accessible web apps</strong> and the backend services behind them. Currently at Company Name.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">View work</a>
+      <a class="btn" href="https://github.com/your-username">GitHub</a>
+      <a class="btn" href="resume.pdf">Résumé</a>
+    </div>
+  </header>
+
+  <section id="work" aria-labelledby="work-h">
+    <h2 id="work-h">Selected work</h2>
+    <p class="sub">A few projects I'm proud of. Each links to the code.</p>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://github.com/your-username/project-one">Project One</a></h3>
+        <p>One or two sentences on what it does, who uses it, and the result you got.</p>
+        <ul class="tags"><li>TypeScript</li><li>React</li><li>PostgreSQL</li></ul>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/your-username/project-two">Project Two</a></h3>
+        <p>A command-line tool that does X so people can Y. Mention the problem it solved.</p>
+        <ul class="tags"><li>Python</li><li>SQLite</li></ul>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/your-username/project-three">Project Three</a></h3>
+        <p>An open-source contribution, class project, or side project that shows how you work.</p>
+        <ul class="tags"><li>Go</li><li>Docker</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div class="about">
+      <div>
+        <p>Write a short paragraph about how you got into programming and what you enjoy building.</p>
+        <p>Add a second one about what you're looking for next, in your own voice and with specifics.</p>
+      </div>
+      <div>
+        <h3 class="skills-title">Tools I use most</h3>
+        <ul class="skills">
+          <li>JavaScript, TypeScript</li>
+          <li>React, Node.js</li>
+          <li>Python, Go</li>
+          <li>PostgreSQL, SQLite</li>
+          <li>Git, Docker</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="contact">
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="sub">I'm open to new roles and interesting projects. Email is the fastest way to reach me.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:you@example.com">you@example.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/your-username">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© <span id="year">2026</span> Your Name</footer>
+</main>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
